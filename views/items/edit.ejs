@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Item</title>
+  </head>
+  <body>
+    <h1>Edit item</h1>
+    <form action="/items/<%=item._id%>?_method=PUT" method="POST">
+      <input
+        type="text"
+        name="print"
+        placeholder="Print Name"
+        value="<%= item.print %> "
+      />
+      <input
+        type="number"
+        name="price"
+        placeholder="Price of the Item"
+        value="<%= item.price %>"
+      />
+      <select name="size" id="size">
+        <option value="s">S</option>
+        <option value="m">M</option>
+        <option value="l">L</option>
+      </select>
+      <button>EDIT</button>
+    </form>
+    <a href="/items">Go back</a>
+  </body>
+</html>
